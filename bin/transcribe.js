@@ -5,8 +5,13 @@ const path = require('path');
 const args = process.argv.slice(2);
 
 if (args.length === 0) {
-  console.log('Usage: npx youtube-transcribe <URL> [language]');
-  console.log('Example: npx youtube-transcribe "https://youtube.com/watch?v=VIDEO_ID" zh');
+  console.log('Usage:');
+  console.log('  npx github:BODYsuperman/Youtube-Transcriber-Skill <URL> [language]');
+  console.log('  python3 transcribe.py <URL> [language]');
+  console.log('');
+  console.log('Example:');
+  console.log('  npx github:BODYsuperman/Youtube-Transcriber-Skill "https://youtube.com/watch?v=VIDEO_ID" zh');
+  console.log('  python3 transcribe.py "URL" zh');
   process.exit(0);
 }
 

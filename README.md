@@ -6,17 +6,17 @@
 
 ## 🚀 快速开始
 
-### 方法 1：OpenClaw（自动安装）
+### 方法 1：OpenClaw（推荐）
 
 ```bash
 /openclaw install youtube-transcribe
 /youtube-transcribe "URL"
 ```
 
-### 方法 2：NPX（最简单）
+### 方法 2：直接从 GitHub（NPX）
 
 ```bash
-npx youtube-transcribe "https://youtube.com/watch?v=VIDEO_ID"
+npx github:BODYsuperman/Youtube-Transcriber-Skill "URL"
 ```
 
 ### 方法 3：Python（手动安装）
@@ -24,7 +24,7 @@ npx youtube-transcribe "https://youtube.com/watch?v=VIDEO_ID"
 ```bash
 git clone https://github.com/BODYsuperman/Youtube-Transcriber-Skill.git
 cd Youtube-Transcriber-Skill
-./install.sh  # 或 pip3 install -r requirements.txt
+./install.sh
 python3 transcribe.py "URL"
 ```
 
