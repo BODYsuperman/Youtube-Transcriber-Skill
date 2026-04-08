@@ -20,6 +20,32 @@
 
 ## 🚀 快速开始
 
+### 方法 1：使用 NPX（推荐，无需安装）
+
+```bash
+# 一行命令即可使用
+npx youtube-transcribe "https://youtube.com/watch?v=VIDEO_ID"
+
+# 指定语言
+npx youtube-transcribe "URL" zh      # 中文
+npx youtube-transcribe "URL" en      # 英文
+npx youtube-transcribe "URL" auto    # 自动检测
+```
+
+**优点：**
+- ✅ 无需克隆仓库
+- ✅ 无需安装依赖
+- ✅ 随时随地使用
+- ✅ 自动处理依赖
+
+**要求：**
+- Node.js >= 14.0.0
+- Python >= 3.8.0
+
+---
+
+### 方法 2：克隆仓库（适合开发者）
+
 ### 1. 环境要求
 
 | 要求 | 最低配置 | 推荐配置 |
@@ -30,7 +56,7 @@
 | **内存** | 4GB | 8GB+ |
 | **存储** | 10GB 可用 | 50GB+ |
 
-### 2. 安装依赖
+### 2. 安装依赖（仅方法 2 需要）
 
 ```bash
 # 安装 yt-dlp（YouTube 下载工具）
@@ -44,7 +70,7 @@ python3 -m yt_dlp --version
 python3 -c "from faster_whisper import WhisperModel; print('Whisper OK!')"
 ```
 
-### 3. 克隆仓库
+### 3. 克隆仓库（仅方法 2）
 
 ```bash
 git clone https://github.com/BODYsuperman/Youtube-Transcriber-Skill.git
@@ -55,7 +81,20 @@ cd Youtube-Transcriber-Skill
 
 ## 📖 使用方法
 
-### 基础用法
+### NPX 方式（推荐）
+
+```bash
+# 自动检测语言
+npx youtube-transcribe "https://www.youtube.com/watch?v=VIDEO_ID"
+
+# 指定语言
+npx youtube-transcribe "URL" zh      # 中文
+npx youtube-transcribe "URL" en      # 英文
+npx youtube-transcribe "URL" ja      # 日文
+npx youtube-transcribe "URL" ko      # 韩文
+```
+
+### Python 方式
 
 ```bash
 # 自动检测语言

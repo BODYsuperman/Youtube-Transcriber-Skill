@@ -1,0 +1,36 @@
+{
+  "name": "youtube-transcriber-skill",
+  "version": "1.0.0",
+  "description": "Automatically transcribe any YouTube video with Whisper AI",
+  "main": "bin/transcribe.js",
+  "bin": {
+    "youtube-transcribe": "./bin/transcribe.js"
+  },
+  "scripts": {
+    "start": "node bin/transcribe.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "youtube",
+    "transcribe",
+    "whisper",
+    "speech-to-text",
+    "ai",
+    "subtitle",
+    "caption"
+  ],
+  "author": "Alex Bloomberg",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/BODYsuperman/Youtube-Transcriber-Skill.git"
+  },
+  "bugs": {
+    "url": "https://github.com/BODYsuperman/Youtube-Transcriber-Skill/issues"
+  },
+  "homepage": "https://github.com/BODYsuperman/Youtube-Transcriber-Skill#readme",
+  "engines": {
+    "node": ">=14.0.0",
+    "python": ">=3.8.0"
+  }
+}
