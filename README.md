@@ -122,21 +122,91 @@ cat /tmp/transcribe_result.json
 
 ### Q1: 下载失败（403 错误）
 
+某些 YouTube 视频需要 cookies 才能下载。
+
+**解决方案 1：使用 cookies**
+
+1. 安装 Chrome 扩展：[Get cookies.txt LOCALLY](https://chrome.google.com/webstore/detail/get-cookiestxt-locally/cclelndahbckbenkjhflpdbgdldlbecc)
+
+2. 访问 YouTube 并登录账号
+
+3. 点击扩展图标 → Export cookies.txt
+
+4. 保存 cookies.txt 到 `~/cookies.txt`
+
+5. 使用 cookies 下载：
+   ```bash
+   python3 -m yt_dlp --cookies ~/cookies.txt "URL"
+   ```
+
+**解决方案 2：使用代理**
+
 ```bash
-# 使用代理
+# HTTP 代理
 python3 transcribe.py "URL" -p "http://proxy:port"
+
+# SOCKS 代理
+python3 transcribe.py "URL" -p "socks5://proxy:port"
 ```
 
 ### Q2: 转录太慢
 
-使用更小的模型（修改 `transcribe.py` 中的 `WhisperModel('tiny')`）
+**使用更小的模型：**
+
+```python
+# 修改 transcribe.py
+model = WhisperModel('tiny')  # 最快（100MB）
+# model = WhisperModel('base')  # 平衡（500MB）
+```
+
+**使用 GPU 加速（需要 NVIDIA）：**
+
+```python
+model = WhisperModel('tiny', device='cuda', compute_type='float16')
+```
 
 ### Q3: 长视频超时
 
-使用后台运行模式：
+**使用后台运行模式：**
 
 ```bash
 /tmp/start_transcribe.sh "URL" zh
+
+# 监控进度
+tail -f /tmp/transcribe_progress.log
+```
+
+**增加超时设置：**
+
+```json
+{
+  "agents": {
+    "defaults": {
+      "timeoutSeconds": 3600
+    }
+  },
+  "tools": {
+    "timeout": 1800
+  }
+}
+```
+
+### Q4: 内存不足
+
+**使用 tiny 模型（仅需 100MB）：**
+
+```python
+model = WhisperModel('tiny', device='cpu', compute_type='int8')
+```
+
+### Q5: 找不到结果文件
+
+**检查临时文件：**
+
+```bash
+ls -lh /tmp/transcribe_*.json
+ls -lh /tmp/transcript_*.txt
+cat /tmp/transcribe_progress.log
 ```
 
 ---
