@@ -1,10 +1,2 @@
-# YouTube Transcriber Skill - Dependencies
-
-# YouTube download tool
 yt-dlp>=2024.0.0
-
-# Whisper speech recognition
 faster-whisper>=1.0.0
-
-# Optional: For GPU support
-# ctranslate2>=4.0.0
