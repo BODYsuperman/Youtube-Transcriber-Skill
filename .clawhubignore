@@ -1,0 +1,25 @@
+# Git files
+.git/
+.gitignore
+ORIG_HEAD
+HEAD
+config
+
+# Dependencies
+node_modules/
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Keep these
+!README.md
+!SKILL.md
+!clawhub.json
+!package.json
+!requirements.txt
+!transcribe.py
+!bin/
