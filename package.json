@@ -1,6 +1,7 @@
 {
   "name": "youtube-transcribe",
   "version": "1.0.0",
+  "main": "transcribe.py",
   "description": "One-click YouTube video transcription with Whisper AI",
   "bin": {
     "youtube-transcribe": "./bin/transcribe.js"
